@@ -1,0 +1,13 @@
+C:\Users\milad\source\repos\EveMan\EveMan\bin\Debug\netcoreapp3.1\EveMan.exe
+C:\Users\milad\source\repos\EveMan\EveMan\bin\Debug\netcoreapp3.1\EveMan.deps.json
+C:\Users\milad\source\repos\EveMan\EveMan\bin\Debug\netcoreapp3.1\EveMan.runtimeconfig.json
+C:\Users\milad\source\repos\EveMan\EveMan\bin\Debug\netcoreapp3.1\EveMan.runtimeconfig.dev.json
+C:\Users\milad\source\repos\EveMan\EveMan\bin\Debug\netcoreapp3.1\EveMan.dll
+C:\Users\milad\source\repos\EveMan\EveMan\bin\Debug\netcoreapp3.1\EveMan.pdb
+C:\Users\milad\source\repos\EveMan\EveMan\obj\Debug\netcoreapp3.1\EveMan.csprojAssemblyReference.cache
+C:\Users\milad\source\repos\EveMan\EveMan\obj\Debug\netcoreapp3.1\EveMan.AssemblyInfoInputs.cache
+C:\Users\milad\source\repos\EveMan\EveMan\obj\Debug\netcoreapp3.1\EveMan.AssemblyInfo.cs
+C:\Users\milad\source\repos\EveMan\EveMan\obj\Debug\netcoreapp3.1\EveMan.csproj.CoreCompileInputs.cache
+C:\Users\milad\source\repos\EveMan\EveMan\obj\Debug\netcoreapp3.1\EveMan.dll
+C:\Users\milad\source\repos\EveMan\EveMan\obj\Debug\netcoreapp3.1\EveMan.pdb
+C:\Users\milad\source\repos\EveMan\EveMan\obj\Debug\netcoreapp3.1\EveMan.genruntimeconfig.cache
