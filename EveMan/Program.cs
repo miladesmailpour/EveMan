@@ -184,6 +184,46 @@ namespace EveMan
             return s;
         }
 
+        public static void makeRSVP()
+        {
+            int eventId;
+            int customerId;
+            string cust;
+            Console.Clear();
+            Console.WriteLine(eCoord.eventList());
+            Console.WriteLine(eCoord.customerList());
+            Console.Write("Please enter a Event id:");
+            eventId = getIntChoice();
+            if (eCoord.existEvent(eventId))
+            {
+                Console.Write("Please enter a Customer id:");
+                customerId = getIntChoice();
+                if (eCoord.existCustomer(customerId))
+                {
+                    eCoord.makeRsvp(eventId, customerId);
+                }
+                else
+                {
+                    Console.WriteLine("Customer with id {0} was not found..", customerId);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Event with id {0} was not found..", eventId);
+            }
+
+            Console.WriteLine("\nPress any key to continue return to the previous menu.");
+            Console.ReadKey();
+        }
+
+        public static void viewRsvps()
+        {
+            Console.Clear();
+            Console.WriteLine(eCoord.rsvpList());
+            Console.WriteLine("\nPress any key to continue return to the main menu.");
+            Console.ReadKey();
+        }
+
 
         public static void runCustomerMenu()
         {
@@ -219,8 +259,8 @@ namespace EveMan
             int choice = getValidChoice(3, menu);
             while (choice != 3)
             {
-                if (choice == 1) { }
-                if (choice == 2) { }
+                if (choice == 1) { makeRSVP();  }
+                if (choice == 2) { viewRsvps(); }
 
                 choice = getValidChoice(3, menu);
             }
@@ -268,7 +308,7 @@ namespace EveMan
 
         static void Main(string[] args)
         {
-            eCoord = new EventCoordinator(200, 1000, 101, 5000);
+            eCoord = new EventCoordinator(200, 1000, 101, 5000, 300, 10000);
             runProgram();
             Console.WriteLine("Thank you for using Andrew's Event Management Limited System. ");
             Console.WriteLine("Press any key to exit.");

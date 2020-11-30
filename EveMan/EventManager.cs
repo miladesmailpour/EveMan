@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EveMan
 {
-    class EventManager
+    class EventManager : IManager<Event>
     {
         private static int currentEventId;
         private int maxEvents;
@@ -52,7 +52,7 @@ namespace EveMan
             return false;
         }
 
-        public bool eventExists(int eid)
+        public bool exist(int eid)
         {
             int loc = find(eid);
             if (loc == -1) { return false; }

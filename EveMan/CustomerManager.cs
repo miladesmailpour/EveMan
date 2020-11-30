@@ -68,6 +68,11 @@ namespace EveMan
             numCustomers--;
             return true;
         }
+        public string getFullName(int cId)
+        {
+            int loc = find(cId);
+            return customerList[loc].getFirstName() + " " + customerList[loc].getLastName();
+        }
 
         public string getList()
         {
