@@ -29,7 +29,7 @@ namespace EveMan
             return true;
         }
 
-        private int findEvent(int eid)
+        public int find(int eid)
         {
             for (int x = 0; x < numEvents; x++)
             {
@@ -41,33 +41,33 @@ namespace EveMan
 
         public bool eventExists(int eid)
         {
-            int loc = findEvent(eid);
+            int loc = find(eid);
             if (loc == -1) { return false; }
             return true;
         }
 
-        public Event getEvent(int eid)
+        public Event get(int eid)
         {
-            int loc = findEvent(eid);
+            int loc = find(eid);
             if (loc == -1) { return null; }
             return eventList[loc];
         }
 
-        public bool deleteEvent(int eid)
+        public bool delete(int eid)
         {
-            int loc = findEvent(eid);
+            int loc = find(eid);
             if (loc == -1) { return false; }
             eventList[loc] = eventList[numEvents - 1];
             numEvents--;
             return true;
         }
-        public string getEventInfo(int eid)
+        public string getInfo(int eid)
         {
-            int loc = findEvent(eid);
+            int loc = find(eid);
             if (loc == -1) { return "There is no event with id " + eid + "."; }
             return eventList[loc].ToString();
         }
-        public string getEventList()
+        public string getList()
         {
             string s = "Event List:";
             for (int x = 0; x < numEvents; x++)

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EveMan
 {
-    class Event : Idto
+    class Event : IDto
     {
         private int eventId;
         private string eventName;

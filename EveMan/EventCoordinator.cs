@@ -23,16 +23,16 @@ namespace EveMan
 
         public string customerList()
         {
-            return custMan.getCustomerList();
+            return custMan.getList();
         }
 
         public string getCustomerInfoById(int id)
         {
-            return custMan.getCustomerInfo(id);
+            return custMan.getInfo(id);
         }
         public bool deleteCustomer(int id)
         {
-            return custMan.deleteCustomer(id);
+            return custMan.delete(id);
         }
 
         // Event related methods
@@ -43,12 +43,12 @@ namespace EveMan
 
         public string eventList()
         {
-            return eventMan.getEventList();
+            return eventMan.getList();
         }
 
         public string getEventInfoById(int id)
         {
-            return eventMan.getEventInfo(id);
+            return eventMan.getInfo(id);
         }
 
     }

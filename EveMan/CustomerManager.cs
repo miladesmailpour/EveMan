@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EveMan
 {
-    class CustomerManager
+    class CustomerManager : IManager<Customer>
     {
         private static int currentCustNumber;
         private int maxNumCustomers;
@@ -29,7 +29,7 @@ namespace EveMan
             return true;
         }
 
-        public int findCustomer(int cid)
+        public int find(int cid)
         {
             for (int x = 0; x < numCustomers; x++)
             {
@@ -39,37 +39,37 @@ namespace EveMan
             return -1;
         }
 
-        public bool customerExist(int cid)
+        public bool exist(int cid)
         {
-            int loc = findCustomer(cid);
+            int loc = find(cid);
             if (loc == -1) { return false; }
             return true;
         }
 
-        public Customer getCustomer(int cid)
+        public Customer get(int cid)
         {
-            int loc = findCustomer(cid);
+            int loc = find(cid);
             if (loc == -1) { return null; }
             return customerList[loc];
         }
 
-        public string getCustomerInfo(int cid)
+        public string getInfo(int cid)
         {
-            int loc = findCustomer(cid);
+            int loc = find(cid);
             if (loc == -1) { return "There is no customer with id " + cid + "."; }
             return customerList[loc].ToString();
         }
 
-        public bool deleteCustomer(int cid)
+        public bool delete(int cid)
         {
-            int loc = findCustomer(cid);
+            int loc = find(cid);
             if (loc == -1) { return false; }
             customerList[loc] = customerList[numCustomers - 1];
             numCustomers--;
             return true;
         }
 
-        public string getCustomerList()
+        public string getList()
         {
             string s = "Customer List:";
             s = s + "\nNumber \t Name \t  \t Phone";

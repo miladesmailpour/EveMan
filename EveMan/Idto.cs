@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EveMan
 {
-    interface Idto
+    interface IDto
     {
         int getId();
         string ToString();
