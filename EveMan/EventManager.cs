@@ -33,7 +33,7 @@ namespace EveMan
         {
             for (int x = 0; x < numEvents; x++)
             {
-                if (eventList[x].getEventId() == eid)
+                if (eventList[x].getId() == eid)
                     return x;
             }
             return -1;
@@ -72,7 +72,7 @@ namespace EveMan
             string s = "Event List:";
             for (int x = 0; x < numEvents; x++)
             {
-                s = s + "\n" + eventList[x].getEventId() + " \t " + eventList[x].getEventName() + " \t " + eventList[x].getVenue();
+                s = s + "\n" + eventList[x].getId() + " \t " + eventList[x].getEventName() + " \t " + eventList[x].getVenue();
             }
             return s;
         }

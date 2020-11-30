@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EveMan
 {
-    class Customer
+    class Customer : Idto
     {
         private int customerId;
         private string firstName;
@@ -21,7 +21,7 @@ namespace EveMan
             phone = ph;
         }
 
-        public int getId() { return customerId; }
+        public int  getId() { return customerId; }
         public string getFirstName() { return firstName; }
         public string getLastName() { return lastName; }
         public string getPhone() { return phone; }

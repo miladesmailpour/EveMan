@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EveMan
 {
-    class Event
+    class Event : Idto
     {
         private int eventId;
         private string eventName;
@@ -27,7 +27,7 @@ namespace EveMan
             dateCreated = DateTime.Now.ToString(@"MM\/dd\/yyyy h\:mm tt");
         }
 
-        public int getEventId() { return eventId; }
+        public int getId() { return eventId; }
         public string getEventName() { return eventName; }
         public string getVenue() { return venue; }
 
