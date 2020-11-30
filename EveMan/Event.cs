@@ -30,6 +30,7 @@ namespace EveMan
         public int getId() { return eventId; }
         public string getEventName() { return eventName; }
         public string getVenue() { return venue; }
+        public Date getEventDate() { return eventDate; }
 
         public int getMaxAttendees() { return maxAttendees; }
         public int getNumAttendees() { return numAttendees; }

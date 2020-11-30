@@ -22,6 +22,7 @@ namespace EveMan
         public bool addEvent(string name, string venue, Date eventDate, int maxAttendees)
         {
             if (numEvents >= maxEvents) { return false; }
+            if (existVenueDate(venue, eventDate)) { return false; }
             Event e = new Event(currentEventId, name, venue, eventDate, maxAttendees);
             eventList[numEvents] = e;
             numEvents++;
@@ -37,6 +38,18 @@ namespace EveMan
                     return x;
             }
             return -1;
+        }
+
+        private bool existVenueDate(string venue, Date eventDate)
+        {
+            for (int x = 0; x < numEvents; x++)
+            {
+                if (eventList[x].getVenue().Equals(venue) && eventList[x].getEventDate().dateToString().Equals(eventDate.dateToString()))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public bool eventExists(int eid)

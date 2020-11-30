@@ -87,6 +87,12 @@ namespace EveMan
             }
         }
 
+        public string dateToString()
+        {
+            string s = day + " " + viewShortMonth() + " " + year;
+            return s;
+        }
+
         public override string ToString()
         {
             string s = day + " " + viewShortMonth() + " " + year;
