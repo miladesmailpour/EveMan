@@ -59,6 +59,16 @@ namespace EveMan
             return true;
         }
 
+        public bool hasRoom(int eid)
+        {
+            int loc = find(eid);
+            if (eventList[loc].getNumAttendees() < eventList[loc].getMaxAttendees())
+            {
+                return true;
+            }
+            return false;
+        }
+
         public Event get(int eid)
         {
             int loc = find(eid);

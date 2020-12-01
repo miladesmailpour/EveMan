@@ -19,14 +19,22 @@ namespace EveMan
             rsvpList = new Rsvp[maxRsvps];
         }
 
-        public bool addRsvp(int eventId, int customerId)
+        public string addRsvp(int eventId, int customerId, CustomerManager cm, EventManager em)
         {
-            if (numRsvps >= maxRsvps) { return false; }
+            if (numRsvps >= maxRsvps) { return "out of RSVP request! Please contact to the support system."; }
+            int locCustomer = cm.find(customerId);
+            int locEvent = em.find(eventId);
+            if (locEvent == -1) { return String.Format("Event with id {0} was not found..", eventId); }
+            if (locCustomer == -1) { return String.Format("Customer with id {0} was not found..", customerId); }
+            if (!em.hasRoom(eventId)) { return String.Format("Event with id {0} has NO more room..", eventId);}
+            Event currEvent = em.get(eventId);
+            if (currEvent.findAttendee(customerId) != -1) { return String.Format("Customer with id {0} was already added.", customerId); }
+            currEvent.addAttendee(cm.get(customerId));
             Rsvp r = new Rsvp(currentRsvpId, eventId, customerId, DateTime.Now.ToString(@"MM\/dd\/yyyy h\:mm tt"));
             rsvpList[numRsvps] = r;
             numRsvps++;
             currentRsvpId++;
-            return true;
+            return "";
         }
         public string getList(CustomerManager cm)
         {

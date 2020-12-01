@@ -188,29 +188,25 @@ namespace EveMan
         {
             int eventId;
             int customerId;
-            string cust;
+            //string cust;
             Console.Clear();
             Console.WriteLine(eCoord.eventList());
             Console.WriteLine(eCoord.customerList());
             Console.Write("Please enter a Event id:");
             eventId = getIntChoice();
-            if (eCoord.existEvent(eventId))
+
+
+            Console.Write("Please enter a Customer id:");
+            customerId = getIntChoice();
+
+            string msg = eCoord.makeRsvp(eventId, customerId);
+
+
+            if (!msg.Equals(""))
             {
-                Console.Write("Please enter a Customer id:");
-                customerId = getIntChoice();
-                if (eCoord.existCustomer(customerId))
-                {
-                    eCoord.makeRsvp(eventId, customerId);
-                }
-                else
-                {
-                    Console.WriteLine("Customer with id {0} was not found..", customerId);
-                }
+                Console.WriteLine(msg);
             }
-            else
-            {
-                Console.WriteLine("Event with id {0} was not found..", eventId);
-            }
+
 
             Console.WriteLine("\nPress any key to continue return to the previous menu.");
             Console.ReadKey();

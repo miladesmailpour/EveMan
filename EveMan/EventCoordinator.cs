@@ -54,18 +54,10 @@ namespace EveMan
         }
 
         // RSVP related methods
-        public bool existCustomer(int id)
-        {
-            return custMan.exist(id);
-        }
-        public bool existEvent(int id)
-        {
-            return eventMan.exist(id);
-        }
 
-        public bool makeRsvp(int eventId, int customerId)
+        public string makeRsvp(int eventId, int customerId)
         {
-            return rsvpMan.addRsvp(eventId, customerId);
+            return rsvpMan.addRsvp(eventId, customerId, custMan, eventMan);
         }
 
         public string rsvpList()

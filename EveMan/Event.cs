@@ -43,9 +43,9 @@ namespace EveMan
             return true;
         }
 
-        private int findAttendee(int custId)
+        public int findAttendee(int custId)
         {
-            for (int x = 0; x < maxAttendees; x++)
+            for (int x = 0; x < numAttendees; x++)
             {
                 if (attendeeList[x].getId() == custId)
                     return x;
@@ -67,7 +67,7 @@ namespace EveMan
             string s = "\nCustomers registered :";
             for (int x = 0; x < numAttendees; x++)
             {
-                s = s + "\n" + attendeeList[x].getFirstName() + " " + attendeeList[x].getLastName();
+                s = s + "\n" + attendeeList[x].getId() + " " + attendeeList[x].getFirstName() + " " + attendeeList[x].getLastName();
             }
             return s;
         }
